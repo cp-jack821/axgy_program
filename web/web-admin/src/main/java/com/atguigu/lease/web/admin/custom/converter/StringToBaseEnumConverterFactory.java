@@ -17,7 +17,7 @@ public class StringToBaseEnumConverterFactory implements ConverterFactory<String
 
             @Override
             public T convert(String source) {
-                Arrays.stream(targetType.getEnumConstants()).filter(t -> source.equals(t.getCode()))
+                Arrays.stream(targetType.getEnumConstants()).filter(t -> source.equals(t.getCode() + ""))
                         .findFirst().orElseThrow(RuntimeException::new);
                 return null;
             }
